@@ -3,18 +3,21 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee payroll form</title>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300;1,400&display=swap"
-    rel="stylesheet"
-  />
-    <link rel="stylesheet" href="../CSS/Register.css">
-</head>
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/Register.css" />
+  </head>
   <body>
-      <!-- UC-1 Add header with logo -->
+    <!-- UC-1 Add header with logo -->
     <header class="header-content">
       <div class="logo-content">
-        <img src="../assets/icon/logo.png" alt="Payroll icon" />
+        <img src="../assets/icon/logo.png" alt="Address icon" />
         <div class="heading">
           <span class="address-text">Address</span>
           <span class="address-text address-book">Book</span>
@@ -23,13 +26,80 @@
     </header>
     <!-- UC-2 Div with form contents -->
     <div class="form-content">
-        <form>
-            <div class="form-head">Person Address Form</div>
-            <div class="row-content">
-                <label class = "label text"for="name">Full Name</label>
-                <input type="text" class="input" name="name" placeholder="Enter Your Full Name" required>
-            </div>
-        </form>
+      <form>
+        <div class="form-head">Person Address Form
+           <div><img src="../assets/icon/cancel.png" alt=""></div>
         </div>
+        <div class="row">
+          <div class="row-content">
+            <label class="label text" for="fullname">Full Name</label>
+            <input
+              type="text"
+              class="input"
+              name="name"
+              id="fullname"
+              placeholder="Enter Your Full Name"
+              required
+            />
+          </div>
+          <div class="row-content">
+            <label class="label text" for="contactNum">Phone Number</label>
+            <input
+              type="tel"
+              class="input"
+              name="contact"
+              id="contactNum"
+              placeholder="Enter Your Mobile Number"
+              required
+            />
+          </div>
+          <div class="row-content">
+            <label class="label text" for="address">Address</label>
+            <textarea
+            name="address"
+            id="address"
+            class="input"
+            style="height: 104px"
+          required></textarea>
+          </div>
+          <div class="address-row">
+            <div class="row-content">
+                <label class="label text" for="city">City</label>
+            <select name="city" id="city">
+              <option value="Chennai">Chennai</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Banglore">Banglore</option>
+              <option value="Hyderabad">Hyderabad</option>
+            </select>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="state">State</label>
+            <select name="state" id="state">
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+            </select>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="zip">Zip Code</label>
+                <input
+              type="text"
+              class="input"
+              name="zip"
+              id="zip"
+              required
+            />
+            </div>
+          </div>
+          <div class="button-div">
+            <button type="reset" class="button resetButton" onclick="resetForm()">Reset</button>
+            <button type="submit" class="button addButton" onclick="save()">
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

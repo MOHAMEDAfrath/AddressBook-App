@@ -60,16 +60,24 @@ body{
     letter-spacing: 0px;
     padding: 20px 20px;
     background: #008CFF 0% 0% no-repeat padding-box;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+  }
+  .form-head>div{
+      float: right;
+  }
+  .form-head>div>img{
+      width: 40px;
+  }
+  .row{
+      padding: 44px 100px;
   }
   .row-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 44px 60px;
+    margin-bottom: 10px;
   }
   .label {
     min-width: 100px;
@@ -85,4 +93,49 @@ body{
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+  }
+  .address-row{
+      display: flex;
+      justify-content: space-between;
+  }
+  select {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font: normal normal normal 16px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    background-color: transparent;
+    margin-right: 15px;
+    width: 120%;
+  }
+  .button-div{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 30px;
+  }
+  .button {
+    font-size: 20px;
+    color: #42515f;
+    font-weight: normal;
+    font-family: "Roboto";
+    background: #e2e2e2;
+    border: none;
+    min-width: 140px;
+    padding: 7px 7px;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .addButton:hover {
+    background-color: #008cff;
+    color: #ffffff;
+  }
+  .addButton {
+    margin-right: 30px;
+  }
+  .resetButton:hover{
+      background-color: #707070;
+      color: #ffffff;
   }
