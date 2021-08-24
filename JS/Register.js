@@ -89,3 +89,15 @@ const setTextValue = (id, value) => {
     const attribute = document.querySelector(id);
     attribute.textContent = value;
 };
+// UC-7 Reset
+const resetForm=()=>{
+    setTextValue('#fullname','');
+    setTextValue('#contactNum','');
+    setTextValue('#address','');
+    setTextValue('#errName','');
+    setTextValue('#errContact','');
+    setTextValue('#errZip','');
+    document.getElementById('city').value="City";
+    document.getElementById('state').value="State";
+    alert("Reseted!");
+}

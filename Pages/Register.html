@@ -72,6 +72,7 @@
             <div class="row-content">
                 <label class="label text" for="city">City</label>
             <select name="city" id="city">
+                <option value="City">City</option>
               <option value="Chennai">Chennai</option>
               <option value="Delhi">Delhi</option>
               <option value="Banglore">Banglore</option>
@@ -81,6 +82,7 @@
             <div class="row-content">
                 <label class="label text" for="state">State</label>
             <select name="state" id="state">
+                <option value="State">State</option>
               <option value="Tamil Nadu">Tamil Nadu</option>
               <option value="Delhi">Delhi</option>
               <option value="Karnataka">Karnataka</option>
@@ -102,7 +104,7 @@
             </div>
           </div>
           <div class="button-div">
-            <button type="reset" class="button resetButton" >Reset</button>
+            <button type="reset" class="button resetButton" onclick="resetForm()" >Reset</button>
             <button type="submit" class="button addButton" onclick="save()">
               Add
             </button>
