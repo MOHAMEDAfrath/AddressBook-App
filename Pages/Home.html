@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee payroll form</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/Home.css" />
+  </head>
+  <body>
+    <!-- UC-1 Add header with logo -->
+    <header class="header-content">
+      <div class="logo-content">
+        <img src="../assets/icon/logo.png" alt="Address icon" />
+        <div class="heading">
+          <span class="address-text">Address</span>
+          <span class="address-text address-book">Book</span>
+        </div>
+      </div>
+    </header>
+    <div class="main-content">
+        <div class="inner-header-content">
+          <div class="contact-detail-text">Person Details<div class="contact-count">0</div>
+          </div>
+          <a href="../Pages/Register.html" class="add-button">
+          <img src="../assets/icon/add-24px.svg" alt="Add Button">Add Person</a>
+        </div>
+        <div class="table-main">
+          <table class="table" id = "display-table">
+        </table>
+        </div>
+    </div>
+    </body>
+    <script src="../JS/Home.js"></script>
+    <script src="../JS/AddressBookModel.js"></script>
+    </html>

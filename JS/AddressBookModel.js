@@ -30,13 +30,19 @@ class AddressBook{
         return this._City;
     }
     set City(value){
+        if(value != "City")
         this._City = value;
+        else
+        throw "Choose City";
     }
     get State(){
         return this._State;
     }
     set State(value){ 
+        if(value!="State")
         this._State = value;
+        else
+        throw "Choose State";
     }
     get zip(){
         return this._zip;

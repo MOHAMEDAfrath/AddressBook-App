@@ -62,10 +62,10 @@ const createContact = () => {
     address.City=getInputValue("city");
     address.State=getInputValue("state");
     address.zip=getInputValue("zip");
+    return address;
   }catch(e){
       alert(e);
   }
-  return address;
 };
 //UC-6 create or update local storage
 const createorUpdateLocal = (address) => {
