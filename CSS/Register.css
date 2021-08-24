@@ -37,3 +37,52 @@ body{
     display: flex;
     flex-direction: column;
 }
+/* UC-2 Header , form ,and a input text */
+.form-content {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    min-height: calc(100% - 80px);
+  }
+  form {
+    width:60%;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #f5f5f5;
+    border-radius: 8px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .form-head {
+    font: normal normal bold 24px/37px Roboto;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    padding: 20px 20px;
+    background: #008CFF 0% 0% no-repeat padding-box;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .row-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 44px 60px;
+  }
+  .label {
+    min-width: 100px;
+    padding-bottom: 5px;
+    display: inline-block;
+    color: #42515f;
+    font: normal normal bolder 16px/24px Roboto;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
