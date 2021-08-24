@@ -1,0 +1,39 @@
+
+*{box-sizing: border-box;}
+body{
+    margin: 0;
+    height: 100%;
+}
+/* Header css for logo and text */
+.header-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    background-color: white;
+}
+.logo-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+}
+.logo-content > img{
+    border: 0px solid #42515F;
+    margin: 6px;
+}
+.address-text{
+    letter-spacing: 0px;
+    color: #008cff;
+    text-transform: uppercase;
+    font: normal normal bold 22px/25px Montserrat;
+    text-align: left;
+}
+.address-book{
+    color: #42515f;
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+}
