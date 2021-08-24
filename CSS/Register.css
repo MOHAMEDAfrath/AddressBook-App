@@ -99,7 +99,6 @@ body{
       justify-content: space-between;
   }
   select {
-    padding: 9px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
@@ -108,7 +107,7 @@ body{
     color: #42515f;
     background-color: transparent;
     margin-right: 15px;
-    width: 120%;
+    padding:9px 50px 9px 0;
   }
   .button-div{
     display: flex;
@@ -139,3 +138,50 @@ body{
       background-color: #707070;
       color: #ffffff;
   }
+/* UC-4 Media Queries */
+  @media only screen and (max-width:1255px) {
+      .address-row{
+      flex-wrap: wrap;
+      }
+      .button-div{
+        justify-content: center;
+      }
+  }
+  @media only screen and (max-width:820px) {
+      form{
+        width: 70%;
+    }
+    
+  }
+  @media only screen and (max-width:506px){
+
+    form{
+        width: 100%;
+    }
+    .row{
+        padding-left: 35px;
+    }
+    .button-div{
+        margin-left: 75px;
+    }
+    .input {
+        width: 110%;
+    }
+  }
+   @media only screen and (max-width:360px){
+      .form-head{
+          font-size: 20px;
+      }
+      .button-div{
+          margin-right: 5px;
+      }
+  }
+  @media only screen and (max-width:281px){
+    .form-head{
+        font-size: 15px;
+    }
+    .form-head>div>img{
+        width: 30px;
+    }  
+
+  } 
