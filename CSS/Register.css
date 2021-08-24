@@ -79,6 +79,10 @@ body{
     align-items: flex-start;
     margin-bottom: 10px;
   }
+  .in-content{
+      display: flex;
+      width: 101%;
+  }
   .label {
     min-width: 100px;
     padding-bottom: 5px;
@@ -137,6 +141,12 @@ body{
   .resetButton:hover{
       background-color: #707070;
       color: #ffffff;
+  }
+  error {
+    margin-left: 10px;
+    font-style: italic;
+    color: red;
+    font-size: 12px;
   }
 /* UC-4 Media Queries */
   @media only screen and (max-width:1255px) {

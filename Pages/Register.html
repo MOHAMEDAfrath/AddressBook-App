@@ -33,6 +33,7 @@
         <div class="row">
           <div class="row-content">
             <label class="label text" for="fullname">Full Name</label>
+            <div class="in-content">
             <input
               type="text"
               class="input"
@@ -41,17 +42,22 @@
               placeholder="Enter Your Full Name"
               required
             />
+            <error id="errName" for="fullname"></error>
+        </div>
           </div>
           <div class="row-content">
             <label class="label text" for="contactNum">Phone Number</label>
+            <div class="in-content">
             <input
               type="tel"
               class="input"
               name="contact"
               id="contactNum"
-              placeholder="Enter Your Mobile Number"
+              placeholder="Enter Your Mobile Number: 91 Your Number"
               required
             />
+            <error id="errContact" for="contactNum"></error>
+            </div>
           </div>
           <div class="row-content">
             <label class="label text" for="address">Address</label>
@@ -83,6 +89,7 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="zip">Zip Code</label>
+                <div class="in-content">
                 <input
               type="text"
               class="input"
@@ -90,6 +97,8 @@
               id="zip"
               required
             />
+            <error id="errZip" for="zip"></error>
+            </div>
             </div>
           </div>
           <div class="button-div">
@@ -102,4 +111,6 @@
       </form>
     </div>
   </body>
+  <script src="../JS/Register.js"></script>
+  <script src="../JS/AddressBookModel.js"></script>
 </html>
