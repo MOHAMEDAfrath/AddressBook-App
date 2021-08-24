@@ -48,4 +48,9 @@ class AddressBook{
         else
         throw 'Zip is invalid';
     }
+    toString(){
+        return "Full Name : "+this.fullName+" Phone Number : "+this.phone+
+        " Address : "+this.address+" City : "+this.City+" State : "+this.State+
+        " Zip : "+this.zip;
+    }
 }
