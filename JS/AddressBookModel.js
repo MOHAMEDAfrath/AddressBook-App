@@ -6,12 +6,12 @@ class AddressBook{
         this._id = value;
         }
     get fullName(){
-        return this._fullName;
+        return this._fullname;
     }
     set fullName(value){
         let nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}([\\s]{0,1}[A-Za-z]{1,})*$");
     if (nameRegex.test(value)) {
-        this._fullName=value;
+        this._fullname=value;
     } else {
       throw "Invalid Name";
     }

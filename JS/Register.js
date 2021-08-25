@@ -1,3 +1,4 @@
+let isUpdate = false;
 let contactObj = {};
 window.addEventListener("DOMContentLoaded", (event) => {
     //UC-5 Validation of input
@@ -43,6 +44,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
     
   });
+  checkForUpdate();
 });
 //saves the data to local
 const save = () => {
@@ -50,8 +52,9 @@ const save = () => {
       setEmployeePayrollObject();
       createorUpdateLocal();
       resetForm();
+      window.location.replace(site_properties.home_page);
     } catch (e) {
-      return;
+      alert(e);
     }
   };
   const setEmployeePayrollObject=()=>{
@@ -127,4 +130,26 @@ const resetForm=()=>{
     setTextValue('#errZip','');
     document.getElementById('city').value="City";
     document.getElementById('state').value="State";
+    console.log('a');
+}
+//checks whether the page comes for update
+const checkForUpdate=()=>{
+  const contactJSON = localStorage.getItem('editContact');
+  isUpdate=contactJSON?true:false;
+  if(!isUpdate)return;
+  contactObj=JSON.parse(contactJSON);
+  setForm();
+}
+const setValue=(id,value)=>{
+  const element = document.querySelector(id);
+  element.value=value;
+}
+//set form for updation
+const setForm=()=>{
+  setValue('#fullname',contactObj._fullname);
+    setValue('#contactNum',contactObj._phone);
+    setValue('#address',contactObj._address);
+    setValue('#city',contactObj._City);
+    setValue('#state',contactObj._State);
+    setValue('#zip',contactObj._zip);    
 }

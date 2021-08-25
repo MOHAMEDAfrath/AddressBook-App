@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     contactList=getaddressBookFromLocalStorage();
   document.querySelector(".contact-count").textContent = contactList.length;
   createInnerHtmlUsingJSON_TemplateLiterals();
+  localStorage.removeItem('editContact');
 });
 //UC-20 gets from local storage
 const getaddressBookFromLocalStorage=()=>
@@ -19,7 +20,7 @@ const createInnerHtmlUsingJSON_TemplateLiterals = () => {
       contactList.forEach(items=>{
           innerHTML = `${innerHTML} 
       <tr>
-                <td>${items._fullName}</td>
+                <td>${items._fullname}</td>
                 <td>${items._phone}</td>
                 <td>${items._address}</td>
                   <td>${items._City}</td>
@@ -27,7 +28,7 @@ const createInnerHtmlUsingJSON_TemplateLiterals = () => {
                 <td>${items._zip}</td>
                 <td>
                   <img name="${items._id}" src="../assets/icon/delete-black-18dp.svg" alt="delete" id="icon" onclick="remove(this)">
-                  <img name="${items._id}" src="../assets/icon/create-black-18dp.svg" alt="create" id="icon">  
+                  <img name="${items._id}" src="../assets/icon/create-black-18dp.svg" alt="create" id="icon" onclick="update(this)">  
                 </td>
               </tr>
               
@@ -40,10 +41,16 @@ const createInnerHtmlUsingJSON_TemplateLiterals = () => {
   {
     let addressData=contactList.find(contact => contact._id == node.name);
     if(!addressData) return ;
-    const index= contactList.map(contact => contact._fullName)
-    .indexOf(addressData._fullName);
+    const index= contactList.map(contact => contact._fullname)
+    .indexOf(addressData._fullname);
     contactList.splice(index,1);
     localStorage.setItem("ContactList",JSON.stringify(contactList));
     document.querySelector(".contact-count").textContent=contactList.length;
     createInnerHtmlUsingJSON_TemplateLiterals();
+  }
+  const update=(node)=>{
+    let contactData = contactList.find(contact=>contact._id==node.name);
+    if(!contactData)return;
+    localStorage.setItem('editContact',JSON.stringify(contactData));
+    window.location.replace(site_properties.register_Page);
   }
