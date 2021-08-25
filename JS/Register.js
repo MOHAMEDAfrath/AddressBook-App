@@ -1,3 +1,4 @@
+let contactObj = {};
 window.addEventListener("DOMContentLoaded", (event) => {
     //UC-5 Validation of input
     const name = document.querySelector("#fullname");
@@ -46,39 +47,66 @@ window.addEventListener("DOMContentLoaded", (event) => {
 //saves the data to local
 const save = () => {
     try {
-      let addressBook = createContact();
-      createorUpdateLocal(addressBook);
+      setEmployeePayrollObject();
+      createorUpdateLocal();
+      resetForm();
     } catch (e) {
       return;
     }
   };
-  //onSubmit validates this function
-const createContact = () => {
-  let address = new AddressBook();
-  try {
-     address.fullName = getInputValue("fullname");
-     address.phone = getInputValue("contactNum");
-    address.address=getInputValue("address");
-    address.City=getInputValue("city");
-    address.State=getInputValue("state");
-    address.zip=getInputValue("zip");
-    return address;
-  }catch(e){
-      alert(e);
+  const setEmployeePayrollObject=()=>{
+    contactObj._fullname=getInputValue('fullname');
+    contactObj._phone = getInputValue("contactNum");
+    contactObj._address = getInputValue("address");
+    contactObj._City = getInputValue("city");
+    contactObj._State = getInputValue("state");
+    contactObj._zip = getInputValue("zip");
   }
-};
 //UC-6 create or update local storage
-const createorUpdateLocal = (address) => {
-    alert(address.toString());
+//UC-10 Refactored to create data with ID
+const createorUpdateLocal = () => {
     //JSON Object
     let addressList = JSON.parse(localStorage.getItem("ContactList"));
-    if (addressList != undefined) {
-        addressList.push(address);
-    } else {
-        addressList = [address];
+    if(addressList){
+      let contactData = addressList.find(contact=>contact._id == contactObj._id);
+      if(!contactData){
+        addressList.push(createNewContact());
+      }else{
+        const index = addressList.map(contact=>contact._id).indexOf(contactData._id);
+        addressList.splice(index,1,createNewContact(contactData._id));
+      }
+    }else{
+      addressList = [createNewContact()];
     }
     //JSON to String
     localStorage.setItem("ContactList", JSON.stringify(addressList));
+  };
+  //checks for id
+  const createNewContact=(id)=>{
+    let contactData = new AddressBook();
+    if(!id)contactData.id = createContactId();
+    else contactData.id = id;
+    setContact(contactData);
+    return contactData;
+  }
+  //allocates ID
+  const createContactId=()=>{
+    let contactId = localStorage.getItem("ContactId");
+    contactId = !contactId?1:(parseInt(contactId)+1).toString();
+    localStorage.setItem("ContactId",contactId);
+    return contactId;
+  }
+  const setContact = (contact)=>{
+    try {
+      contact.fullName = contactObj._fullname;
+      contact.phone = contactObj._phone;
+      contact.address=contactObj._address;
+      contact.City=contactObj._City;
+      contact.State=contactObj._State;
+      contact.zip=contactObj._zip;
+   }catch(e){
+       alert(e);
+   }
   };
   //gets based on ID
 const getInputValue = (id) => {
@@ -99,5 +127,4 @@ const resetForm=()=>{
     setTextValue('#errZip','');
     document.getElementById('city').value="City";
     document.getElementById('state').value="State";
-    alert("Reseted!");
 }

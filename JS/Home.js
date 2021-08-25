@@ -26,8 +26,8 @@ const createInnerHtmlUsingJSON_TemplateLiterals = () => {
                 <td>${items._State}</td>
                 <td>${items._zip}</td>
                 <td>
-                  <img name="${items._fullName}" src="../assets/icon/delete-black-18dp.svg" alt="delete" id="icon" onclick="remove(this)">
-                  <img name="${items._fullName}" src="../assets/icon/create-black-18dp.svg" alt="create" id="icon">  
+                  <img name="${items._id}" src="../assets/icon/delete-black-18dp.svg" alt="delete" id="icon" onclick="remove(this)">
+                  <img name="${items._id}" src="../assets/icon/create-black-18dp.svg" alt="create" id="icon">  
                 </td>
               </tr>
               
@@ -38,7 +38,7 @@ const createInnerHtmlUsingJSON_TemplateLiterals = () => {
   //removes the current row when delete icon is clicked
   const remove= (node) =>
   {
-    let addressData=contactList.find(contact => contact._fullName == node.name);
+    let addressData=contactList.find(contact => contact._id == node.name);
     if(!addressData) return ;
     const index= contactList.map(contact => contact._fullName)
     .indexOf(addressData._fullName);
