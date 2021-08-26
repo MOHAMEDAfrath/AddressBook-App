@@ -47,11 +47,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
   checkForUpdate();
 });
 //saves the data to local
-const save = () => {
+const save = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
     try {
       setEmployeePayrollObject();
       createorUpdateLocal();
       resetForm();
+      localStorage.removeItem('editContact');
       window.location.replace(site_properties.home_page);
     } catch (e) {
       alert(e);
@@ -130,7 +133,6 @@ const resetForm=()=>{
     setTextValue('#errZip','');
     document.getElementById('city').value="City";
     document.getElementById('state').value="State";
-    console.log('a');
 }
 //checks whether the page comes for update
 const checkForUpdate=()=>{
